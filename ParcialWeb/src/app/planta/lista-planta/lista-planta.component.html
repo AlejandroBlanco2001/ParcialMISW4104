@@ -1,0 +1,28 @@
+<section class="mt-4">
+    <img src="../../../assets/background.png" alt="Imagen de fondo de Vivero El Otoño" class="img-fluid shadow-sm">
+    <table class="table mt-4 w-50">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre común</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Clima</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(planta of listaPlantas(); track planta.id){
+                <tr>
+                    <th scope="row">{{ planta.id }}</th>
+                    <td>{{ planta.nombre_comun }}</td>
+                    <td>{{ planta.tipo }}</td>
+                    <td>{{ planta.clima }}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="d-flex flex-column">
+        <span>Total plantas de interior: {{cantidadPlantasInteriores()}}</span>
+        <span>Total plantas de exterior: {{cantidadPlantasInteriores()}}</span>
+    </div>
+</section>
