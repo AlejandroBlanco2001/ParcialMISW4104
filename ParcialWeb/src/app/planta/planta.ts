@@ -25,3 +25,9 @@ export class Planta {
     this.sustrato_siembra = sustrato_siembra;
   }
 }
+
+export class PlantaMinimumInformation extends Planta {
+  constructor(id: number, nombre_comun: string, tipo: string, clima: string) {
+    super(id, nombre_comun, '', tipo, 0, clima, '');
+  }
+}

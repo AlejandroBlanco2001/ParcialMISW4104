@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { ListadoPlantaService } from '../listado-planta.service';
 import { Planta } from '../planta';
 import { catchError, of, take } from 'rxjs';
@@ -6,7 +6,7 @@ import { catchError, of, take } from 'rxjs';
 @Component({
   selector: 'app-lista-planta',
   templateUrl: './lista-planta.component.html',
-  styleUrl: './lista-planta.component.css',
+  styleUrl: './lista-planta.component.scss',
   providers: [ListadoPlantaService],
 })
 export class ListaPlantaComponent {
@@ -27,7 +27,6 @@ export class ListaPlantaComponent {
         })
       )
       .subscribe((plantas) => {
-        console.log(plantas);
         this.listaPlantas.set(plantas as Planta[]);
 
         let plantasExteriores = this.listaPlantas().filter(

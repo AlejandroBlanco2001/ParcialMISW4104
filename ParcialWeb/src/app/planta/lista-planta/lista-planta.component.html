@@ -1,8 +1,8 @@
 <section class="mt-4">
     <img src="../../../assets/background.png" alt="Imagen de fondo de Vivero El Otoño" class="img-fluid shadow-sm">
-    <table class="table mt-4 w-50">
+    <table data-testid ="listado-plantas-table" class="table mt-4 w-50">
         <thead class="table-dark">
-            <tr>
+            <tr data-testid="listado-plantas-table-headers">
                 <th scope="col">#</th>
                 <th scope="col">Nombre común</th>
                 <th scope="col">Tipo</th>
@@ -11,7 +11,7 @@
         </thead>
         <tbody>
             @for(planta of listaPlantas(); track planta.id){
-                <tr>
+                <tr data-testid="listado-plantas-table-row">
                     <th scope="row">{{ planta.id }}</th>
                     <td>{{ planta.nombre_comun }}</td>
                     <td>{{ planta.tipo }}</td>
@@ -22,7 +22,7 @@
     </table>
 
     <div class="d-flex flex-column">
-        <span>Total plantas de interior: {{cantidadPlantasInteriores()}}</span>
-        <span>Total plantas de exterior: {{cantidadPlantasInteriores()}}</span>
+        <span data-testid="plantas-interiores">Total plantas de interior: {{cantidadPlantasInteriores()}}</span>
+        <span data-testid="plantas-exteriores">Total plantas de exterior: {{cantidadPlantasInteriores()}}</span>
     </div>
 </section>
